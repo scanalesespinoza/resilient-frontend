@@ -1,56 +1,52 @@
-# resilient-frontend
 
-This project uses Quarkus, the Supersonic Subatomic Java Framework.
+# Resilient Frontend
 
-If you want to learn more about Quarkus, please visit its website: https://quarkus.io/ .
+This repository contains a simple frontend application designed to test the connectivity and resilience of a backend service. It is part of a series of resilient demo applications intended to demonstrate handling and recovering from service interruptions.
 
-## Running the application in dev mode
+## Installation
 
-You can run your application in dev mode that enables live coding using:
-```shell script
-./mvnw compile quarkus:dev
-```
+To install and run this application, follow these steps:
 
-> **_NOTE:_**  Quarkus now ships with a Dev UI, which is available in dev mode only at http://localhost:8080/q/dev/.
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/scanalesespinoza/resilient-frontend.git
+   ```
+2. Navigate into the repository directory:
+   ```bash
+   cd resilient-frontend
+   ```
+3. Install dependencies (assuming you have a proper JavaScript or Quarkus environment setup):
+   ```bash
+   npm install
+   # or for Quarkus
+   ./mvnw compile
+   ```
+4. Start the application:
+   ```bash
+   npm start
+   # or for Quarkus
+   ./mvnw quarkus:dev
+   ```
 
-## Packaging and running the application
+## Testing
 
-The application can be packaged using:
-```shell script
-./mvnw package
-```
-It produces the `quarkus-run.jar` file in the `target/quarkus-app/` directory.
-Be aware that it’s not an _über-jar_ as the dependencies are copied into the `target/quarkus-app/lib/` directory.
+To test the application:
 
-The application is now runnable using `java -jar target/quarkus-app/quarkus-run.jar`.
+1. Ensure the backend service is running and accessible.
+2. Open your browser and navigate to the application's URL (usually `http://localhost:8080` for local development).
+3. Use the application interface to interact with the backend service and observe how the application handles loss of connectivity and recovery.
 
-If you want to build an _über-jar_, execute the following command:
-```shell script
-./mvnw package -Dquarkus.package.type=uber-jar
-```
+## Contributing
 
-The application, packaged as an _über-jar_, is now runnable using `java -jar target/*-runner.jar`.
+Contributions to this project are welcome! To contribute, please follow these steps:
 
-## Creating a native executable
+1. Fork the repository.
+2. Create a new branch for your feature or fix.
+3. Commit your changes.
+4. Push your branch and open a pull request against the main branch.
 
-You can create a native executable using: 
-```shell script
-./mvnw package -Dnative
-```
+For more details, see the contribution guidelines in the repository.
 
-Or, if you don't have GraalVM installed, you can run the native executable build in a container using: 
-```shell script
-./mvnw package -Dnative -Dquarkus.native.container-build=true
-```
+## License
 
-You can then execute your native executable with: `./target/resilient-frontend-1.0.0-SNAPSHOT-runner`
-
-If you want to learn more about building native executables, please consult https://quarkus.io/guides/maven-tooling.
-
-## Provided Code
-
-### REST
-
-Easily start your REST Web Services
-
-[Related guide section...](https://quarkus.io/guides/getting-started-reactive#reactive-jax-rs-resources)
+This project is licensed under the Apache License 2.0. See the LICENSE file in the repository for the full license text.
